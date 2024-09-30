@@ -1,0 +1,218 @@
+/* Загальні стилі */
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #fff;
+  padding: 8px 16px;
+  height: 40px;
+  border: none;
+  background: #4e75ff;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #6c8cff;
+}
+
+b {
+  font-weight: 600;
+  line-height: 1.33;
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  position: relative;
+  animation: rotate 1s linear infinite;
+}
+.loader::before,
+.loader::after {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  inset: 0px;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  animation: prixClipFix 2s linear infinite;
+}
+.loader::after {
+  border-color: #ff3d00;
+  animation: prixClipFix 2s linear infinite, rotate 0.5s linear infinite reverse;
+  inset: 6px;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes prixClipFix {
+  0% {
+    clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0);
+  }
+  25% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0);
+  }
+  50% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%);
+  }
+  75% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%);
+  }
+  100% {
+    clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 0);
+  }
+}
+
+#search-form {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+#search-form input[type='text'] {
+  border: 1px solid #808080;
+  border-radius: 4px;
+  width: 272px;
+  max-height: 40px;
+  padding: 8px 16px;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+input[type='text']::placeholder {
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #808080;
+}
+
+input[type='text']:hover {
+  border-color: #000 !important;
+}
+
+input[type='text']:focus {
+  border-color: #4e75ff !important;
+  outline: none;
+}
+
+#search-form button {
+  width: 91px;
+  margin-left: 8px;
+}
+
+/* Основні стилі галереї */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  list-style: none;
+  padding: 0;
+  margin: 32px auto;
+  max-width: 1128px;
+  box-sizing: border-box;
+}
+
+/* Стиль елементів галереї */
+.gallery-item {
+  flex: 1 1 calc((100% / 3) - 24px);
+  border: 1px solid #808080;
+  box-sizing: border-box;
+}
+/* Попередній перегляд зображення */
+.preview-image {
+  width: 100%;
+  height: 152px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.preview-image:hover {
+  transform: scale(1.1);
+}
+
+/* Стилізація інформації про зображення */
+.info {
+  height: 48px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  border-top: 1px solid #808080;
+  padding: 8px 16px;
+  box-sizing: border-box;
+  background-color: #fafafb;
+  color: #333;
+}
+
+/* Вирівнювання та відступи для інформації */
+.info p {
+  margin-right: 10px;
+  font-size: 14px;
+}
+
+/* Налаштування іконки лайтбоксу */
+.sl-overlay {
+  background: rgba(46, 47, 66, 0.8) !important;
+}
+
+.custom-iziToast-error {
+  border-bottom: 2px solid #ffbebe !important;
+  border-radius: 4px !important;
+  padding: 20px !important;
+  width: 432px !important;
+  background: #ef4040 !important;
+  display: flex;
+  align-items: center;
+  fill: #fafafb;
+}
+
+.custom-iziToast-info {
+  border-bottom: 2px solid #b8e3ff !important; /* Блакитна рамка */
+  border-radius: 4px !important;
+  padding: 20px !important;
+  width: 251px !important;
+  background: #09f !important; /* Блакитний фон */
+  display: flex;
+  align-items: center;
+  fill: #fafafb !important;
+}
+
+.iziToast-message {
+  max-width: 322px;
+  color: #fafafb !important;
+  font-size: 16px !important;
+  line-height: 1.5 !important;
+  letter-spacing: 0.03em !important;
+}
+
+.custom-iziToast-error .iziToast-icon {
+  color: #fafafb !important; /* Змінити колір іконки, якщо це потрібно */
+}
+
+.iziToast-texts {
+  margin: 0 !important;
+}
