@@ -179,6 +179,13 @@ input[type='text']:focus {
   background: rgba(46, 47, 66, 0.8) !important;
 }
 
+.iziToast {
+    position: fixed !important; /* Залишає повідомлення на одному місці */
+    top: 20px !important; /* Відступ з верхнього краю */
+    right: 20px !important; /* Відступ з правого краю */
+    z-index: 9999; /* Щоб воно завжди було зверху */
+}
+
 .custom-iziToast-info,
 .custom-iziToast-error {
   display: flex;
