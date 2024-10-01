@@ -39,9 +39,9 @@ b {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  position: relative;
   animation: rotate 1s linear infinite;
 }
+
 .loader::before,
 .loader::after {
   content: '';
@@ -49,9 +49,10 @@ b {
   position: absolute;
   inset: 0px;
   border-radius: 50%;
-  border: 5px solid #fff;
+  border: 5px solid #1bfb66;
   animation: prixClipFix 2s linear infinite;
 }
+
 .loader::after {
   border-color: #ff3d00;
   animation: prixClipFix 2s linear infinite, rotate 0.5s linear infinite reverse;
@@ -174,31 +175,28 @@ input[type='text']:focus {
   font-size: 14px;
 }
 
-/* Налаштування іконки лайтбоксу */
 .sl-overlay {
   background: rgba(46, 47, 66, 0.8) !important;
 }
 
+.custom-iziToast-info,
 .custom-iziToast-error {
-  border-bottom: 2px solid #ffbebe !important;
+  display: flex;
+  align-items: center;
   border-radius: 4px !important;
   padding: 20px !important;
   width: 432px !important;
-  background: #ef4040 !important;
-  display: flex;
-  align-items: center;
   fill: #fafafb;
 }
 
+.custom-iziToast-error {
+  border-bottom: 2px solid #ffbebe !important;
+  background: #ef4040 !important;
+}
+
 .custom-iziToast-info {
-  border-bottom: 2px solid #b8e3ff !important; /* Блакитна рамка */
-  border-radius: 4px !important;
-  padding: 20px !important;
-  width: 251px !important;
-  background: #09f !important; /* Блакитний фон */
-  display: flex;
-  align-items: center;
-  fill: #fafafb !important;
+  border-bottom: 2px solid #b8e3ff !important;
+  background: #09f !important;
 }
 
 .iziToast-message {
@@ -210,7 +208,7 @@ input[type='text']:focus {
 }
 
 .custom-iziToast-error .iziToast-icon {
-  color: #fafafb !important; /* Змінити колір іконки, якщо це потрібно */
+  color: #fafafb !important;
 }
 
 .iziToast-texts {
