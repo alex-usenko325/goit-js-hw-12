@@ -1,5 +1,7 @@
 export function renderImages(images) {
   const gallery = document.querySelector('.gallery');
+
+  // Створюємо розмітку для нових зображень
   const markup = images
     .map(
       ({
@@ -25,5 +27,7 @@ export function renderImages(images) {
       `
     )
     .join('');
-  gallery.innerHTML = markup;
+
+  // Додаємо нові зображення до існуючих в галереї
+  gallery.insertAdjacentHTML('beforeend', markup);
 }
